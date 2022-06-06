@@ -1,0 +1,46 @@
+name: validation
+
+on:
+  push:
+
+jobs:
+  build-and-deploy:
+    name: 'validate terraform modules'
+    runs-on: ubuntu-latest
+
+    permissions:
+      id-token: write
+      contents: read
+
+    strategy:
+      matrix:
+        module:
+          - remote_backend
+
+    steps:
+      - name: 'checkout'
+        uses: actions/checkout@v2
+
+      - name: 'tf: setup'
+        uses: hashicorp/setup-terraform@v1
+
+      - name: 'tf: format'
+        id: fmt
+        working-directory: ${{ matrix.module }}
+        run: terraform fmt -check
+
+      - name: 'tf: init'
+        id: init
+        working-directory: ${{ matrix.module }}
+        run: terraform init
+
+      - name: 'tf: validate'
+        id: validate
+        working-directory: ${{ matrix.module }}
+        run: terraform validate
+
+
+
+
+
+  

@@ -15,7 +15,7 @@ jobs:
     strategy:
       matrix:
         module:
-          - remote_backend
+          - aws_s3_remote_backend
 
     steps:
       - name: 'checkout'

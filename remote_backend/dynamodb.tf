@@ -1,4 +1,4 @@
-resource "aws_dynamodb_table" "jenkins_casc_state_locking" {
+resource "aws_dynamodb_table" "state_locking" {
 
   name         = "${local.component_name}-state-locking"
   hash_key     = "LockID"

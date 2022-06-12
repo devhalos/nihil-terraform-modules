@@ -39,6 +39,13 @@ jobs:
         working-directory: ${{ matrix.module }}
         run: terraform validate
 
+      - name: 'tf: validate module usage'
+        id: validate-usage
+        working-directory: examples/${{ matrix.module }}
+        run: |
+          terraform init
+          terraform plan
+
 
 
 

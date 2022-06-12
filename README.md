@@ -78,6 +78,10 @@ Review Changes
 terraform plan
 ```
 
+### Pipeline
+
+Do not forget to add the newly created module in the github action workflows: validation.yml matrix
+
 ## Release
 
 A feature branch is created for a feature in development and a pull request to develop is created to apply the feature change. 

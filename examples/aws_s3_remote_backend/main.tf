@@ -14,6 +14,6 @@ provider "aws" {
 }
 
 module "example_remote_backend" {
-  source    = "../../remote_backend"
+  source    = "../../aws_s3_remote_backend"
   component = "example"
 }

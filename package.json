@@ -1,6 +1,6 @@
 {
   "name": "@devhalos/nihil-terraform-module",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Nihil Terraform Modules",
   "main": "index.js",
   "scripts": {

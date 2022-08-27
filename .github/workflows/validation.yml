@@ -46,9 +46,10 @@ jobs:
         run: terraform validate
 
       - name: 'tf: plan'
-        id: validate-usage
+        id: plan
         working-directory: examples/${{ matrix.module }}
         run: |
+          terraform init
           terraform plan
 
   create-release:

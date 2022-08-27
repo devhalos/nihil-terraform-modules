@@ -11,7 +11,6 @@ resource "aws_s3_bucket_versioning" "state" {
   versioning_configuration {
     status = "Enabled"
   }
-  tags = var.tags
 }
 
 resource "aws_s3_bucket_server_side_encryption_configuration" "state" {
@@ -21,7 +20,6 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "state" {
       sse_algorithm = "AES256"
     }
   }
-  tags = var.tags
 }
 
 resource "aws_s3_bucket_public_access_block" "state" {
@@ -30,6 +28,4 @@ resource "aws_s3_bucket_public_access_block" "state" {
   block_public_policy     = true
   ignore_public_acls      = true
   restrict_public_buckets = true
-
-  tags = var.tags
 }
